@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ShoeStoreApp" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <!-- Primary brand color. -->
+        <item name="colorPrimaryDark">@color/loginBackground</item>
+        <item name="android:navigationBarColor">@color/loginBackground</item>
+
+
+    </style>
+</resources>

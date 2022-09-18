@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground"
+        android:orientation="vertical"
+        tools:context=".ui.onboarding.FirstScreen">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:textSize="35sp"
+            android:layout_marginStart="50dp"
+            android:textColor="#E4E4E4"
+            android:textStyle="bold"
+            android:text="Welcome to my app"
+         />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="346dp"
+            android:layout_height="246dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/shoes1"
+          />
+
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This application allows you to add a set of pictures of shoes and a description of each shoe and the name of the shoe and its manufacturer "
+            android:textColor="#AEABAB"
+            android:textSize="18sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+           />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="24dp"
+            android:text="next"
+            android:textColor="#E4E4E4"
+             />
+    </LinearLayout>
+</layout>
