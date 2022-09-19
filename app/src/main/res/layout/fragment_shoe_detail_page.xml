@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+      <variable
+          name="viewModel"
+          type="noor.serry.shoestoreapp.ui.newShoeDetail.ShoeInfoViewModel" />
     </data>
-
+    <!--I used LinearLayout because I want to arrange the elements vertical-->
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -20,8 +22,9 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="232dp"
+            android:src="@drawable/ic_baseline_image_24"
 
-            android:src="@drawable/ic_baseline_image_24" />
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="@={viewModel.size}"
                 android:ems="10"
                 android:hint="size"
                 android:inputType="numberSigned"
@@ -44,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="@={viewModel.price}"
                 android:ems="10"
                 android:hint="price"
                 android:inputType="numberDecimal"
@@ -61,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="@={viewModel.name}"
                 android:ems="10"
                 android:hint="name"
                 android:inputType="textPersonName"
@@ -71,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="@={viewModel.company}"
                 android:ems="10"
                 android:hint="companyName"
                 android:inputType="textPersonName"
@@ -83,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-
+            android:text="@={viewModel.description}"
             android:hint="description"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
@@ -95,6 +102,7 @@
             android:layout_margin = "20dp"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:onClick="@{()->viewModel.setOnClickListener()}"
             android:background="@drawable/background_bt"
             android:text="save" />
 

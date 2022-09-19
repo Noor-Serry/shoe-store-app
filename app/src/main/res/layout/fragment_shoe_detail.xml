@@ -5,7 +5,7 @@
     <data>
 
     </data>
-
+    <!--I used LinearLayout because I want to arrange the elements vertical-->
     <LinearLayout
 
         android:layout_width="match_parent"
