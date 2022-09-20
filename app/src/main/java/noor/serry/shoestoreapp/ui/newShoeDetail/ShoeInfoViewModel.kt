@@ -2,6 +2,9 @@ package noor.serry.shoestoreapp.ui.newShoeDetail
 
 
 import android.app.Application
+import android.content.res.Resources
+import android.graphics.drawable.Drawable
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.Navigation
@@ -21,7 +24,10 @@ class ShoeInfoViewModel ( application: Application) : AndroidViewModel(applicati
     var name= MutableLiveData<String>()
     var company= MutableLiveData<String>()
     var description= MutableLiveData<String>()
-
+    var image = MutableLiveData<Drawable>()
+    init {
+        image.value = getDrawable(application,R.drawable.ic_baseline_image_24)
+    }
     fun setOnClickListener(){
         saveDataInDB()
         removeDataFromMutableLiveData()

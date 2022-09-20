@@ -1,5 +1,5 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -25,27 +25,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:weightSum="2"
             android:orientation="horizontal">
 
-            <EditText
+            <TextView
                 android:id="@+id/size"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:minHeight="30dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:layout_weight="1"
-                android:ems="10"
-                android:hint="size"
-                android:inputType="numberSigned"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:ems="10"
-                android:hint="price"
-                android:inputType="numberDecimal"
+                android:minHeight="30dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -53,39 +53,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:weightSum="2"
             android:orientation="horizontal">
 
-            <EditText
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
-                android:hint="name"
-                android:inputType="textPersonName"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:minHeight="30dp"
                 tools:ignore="TouchTargetSizeCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/companyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
-                android:hint="companyName"
-                android:inputType="textPersonName"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:minHeight="30dp"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
-        <EditText
+        <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:ems="10"
-
-            android:hint="description"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:minHeight="30dp"
+            />
 
 
 

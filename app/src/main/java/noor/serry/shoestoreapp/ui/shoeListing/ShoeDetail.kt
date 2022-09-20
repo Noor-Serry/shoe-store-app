@@ -27,6 +27,7 @@ lateinit var binding :FragmentShoeDetailBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val args : ShoeDetailArgs by navArgs()
+
         with(args) {
             binding.name.setText(name)
             binding.size.setText(size)
