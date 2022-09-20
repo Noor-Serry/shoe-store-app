@@ -2,14 +2,18 @@ package noor.serry.shoestoreapp.ui.shoeListing
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import noor.serry.shoestoreapp.R
 import noor.serry.shoestoreapp.R.layout.custom_view
 import noor.serry.shoestoreapp.data.room.ShoesInfo
@@ -35,7 +39,9 @@ class ShoeListing : Fragment() {
         binding.addShoes.setOnClickListener(this::goToShoeDetailPage)
         viewModel = ViewModelProvider(requireActivity()).get(ViewModel::class.java)
         setObserver()
+        setActionBar()
     }
+
     private fun setObserver() {
         viewModel.getShoesDetails()?.observe(viewLifecycleOwner) { shoesInfo: List<ShoesInfo> ->
             onChanged(shoesInfo)
@@ -67,6 +73,27 @@ class ShoeListing : Fragment() {
                 "Company Name :$company",description,image)
         }
     }
+
+    private fun setActionBar(){
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolBar)
+        with((activity as AppCompatActivity).supportActionBar!!){
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_baseline_logout_24)
+            setTitle("")
+
+        }
+        binding.toolBar.setNavigationOnClickListener { logOut() }
+    }
+
+    private fun logOut(){
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val  editor = sharedPreferences.edit()
+        editor.putBoolean("isLogin",false)
+        editor.apply()
+        findNavController().navigate(R.id.action_shoeListing_to_login)
+
+    }
+
 
 
 }

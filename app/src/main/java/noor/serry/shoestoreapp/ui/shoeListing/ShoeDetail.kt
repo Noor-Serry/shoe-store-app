@@ -26,16 +26,19 @@ lateinit var binding :FragmentShoeDetailBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val args : ShoeDetailArgs by navArgs()
+        setDataInViews()
+    }
 
-        with(args) {
-            binding.name.setText(name)
-            binding.size.setText(size)
-            binding.companyName.setText(companyName)
-            binding.description.setText(description)
-            binding.price.setText(price)
-            val imageByte = Base64.decode(image, Base64.DEFAULT)
-            binding.imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageByte,0,imageByte.size))
+    private fun setDataInViews(){
+        val args : ShoeDetailArgs by navArgs()
+        with(binding){
+            name.text= args.name
+            size.text = args.size
+            companyName.text = args.companyName
+            description.text = args.description
+            price.text= args.price
+            val imageByte = Base64.decode(args.image, Base64.DEFAULT)
+            imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageByte,0,imageByte.size))
         }
     }
 

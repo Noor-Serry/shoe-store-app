@@ -47,6 +47,11 @@
         <action
             android:id="@+id/action_shoeListing_to_shoeDetail"
             app:destination="@id/shoeDetail" />
+        <action
+            android:id="@+id/action_shoeListing_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailPage"

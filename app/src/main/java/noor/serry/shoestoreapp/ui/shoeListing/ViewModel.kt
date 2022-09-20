@@ -13,7 +13,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     init {
         val repository  = Repository(application)
         val email = PreferenceManager.getDefaultSharedPreferences(application).getString("email", "").toString()
-        shoesDetails = repository.getAllShoesInfo(email )
+        shoesDetails = repository.getAllShoesInfo(email)
     }
 
     fun getShoesDetails(): LiveData<List<ShoesInfo>>? {

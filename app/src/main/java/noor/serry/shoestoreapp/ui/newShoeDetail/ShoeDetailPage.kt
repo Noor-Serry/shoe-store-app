@@ -28,7 +28,7 @@ class ShoeDetailPage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentShoeDetailPageBinding.inflate(inflater,container,false)
-        val shoeInfoViewModel = ViewModelProvider(requireActivity()).get(ShoeInfoViewModel::class.java)
+        var shoeInfoViewModel = ViewModelProvider(requireActivity()).get(ShoeInfoViewModel::class.java)
         binding.viewModel = shoeInfoViewModel
         return binding.root
     }
@@ -53,8 +53,8 @@ class ShoeDetailPage : Fragment() {
  object ShoeDetailPage{
      lateinit var binding : FragmentShoeDetailPageBinding
     fun convertImageToString():String{
-        val bm =( binding.imageView.drawable as BitmapDrawable).bitmap
-        val byteArrayOutputStream = ByteArrayOutputStream()
+        var bm =( binding.imageView.drawable as BitmapDrawable).bitmap
+        var byteArrayOutputStream = ByteArrayOutputStream()
         bm.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream)
         val byteArray = byteArrayOutputStream.toByteArray()
         return Base64.encodeToString(byteArray,Base64.DEFAULT)
