@@ -94,6 +94,11 @@
             android:hint="description"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/saveBt"
@@ -102,12 +107,25 @@
             android:layout_margin = "20dp"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:layout_weight="1"
             android:onClick="@{()->viewModel.setOnClickListener()}"
             android:background="@drawable/background_bt"
             android:text="save" />
 
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin = "20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:onClick="@{()->viewModel.goToShoeList()}"
+            android:background="@drawable/background_bt"
+            android:text="cancel" />
 
 
+    </LinearLayout>
 
     </LinearLayout>
 </layout>

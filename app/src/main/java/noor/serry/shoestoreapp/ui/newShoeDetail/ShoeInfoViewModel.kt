@@ -47,9 +47,11 @@ class ShoeInfoViewModel ( application: Application) : AndroidViewModel(applicati
         company.value = "" ; description.value = ""
     }
 
-    private fun goToShoeList(){
+     fun goToShoeList(){
         Navigation.findNavController(binding.root).navigate(R.id.action_shoeDetailPage_to_shoeListing)
     }
+
+
 
 
 
